@@ -3,3 +3,6 @@ body {
     margin: 0px;
     min-width: 300px;
 }
+input {
+    border-radius: 20px;
+}

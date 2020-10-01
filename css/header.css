@@ -17,17 +17,11 @@ header nav a {
     display: inline-block;
     width: 200px;
     text-decoration: none;
-    color: #c2c2c2;
+    color: #ffffff;
+    
 }
 
 header nav a:hover {
-    color: lightpink;
+    color: darkblue;
+    
 }
-
-
-/* @media (max-width: 800px) {
-    .class{
-        flex-direction: column;
-        justify-content: center;
-    }
-} */
