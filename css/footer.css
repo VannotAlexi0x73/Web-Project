@@ -1,5 +1,26 @@
 footer {
     background-color: #303a4f;
-    display: block;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+footer div.footer_col {
+    top: 0px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+footer nav a {
+    display: inline-block;
+    width: 200px;
+    text-decoration: none;
+    color: #c2c2c2;
+}
+
+footer nav a:hover {
+    color: lightpink;
 }

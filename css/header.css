@@ -18,12 +18,10 @@ header nav a {
     width: 200px;
     text-decoration: none;
     color: #c2c2c2;
-    
 }
 
 header nav a:hover {
     color: lightpink;
-    
 }
 
 
