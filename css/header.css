@@ -18,10 +18,8 @@ header nav a {
     width: 200px;
     text-decoration: none;
     color: #ffffff;
-    
 }
 
 header nav a:hover {
     color: darkblue;
-    
 }
