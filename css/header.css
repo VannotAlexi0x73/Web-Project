@@ -6,19 +6,27 @@ header {
 }
 
 header nav {
-    top: 0px;
     margin-left: 50px;
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
 }
 
 header nav a {
-    display: inline-block;
-    width: 200px;
+    display: flex;
+    flex-direction: row;
     text-decoration: none;
     color: #ffffff;
-    
+    justify-content: center;
+    flex-shrink: 1;
+    width: ;
+}
+
+#user {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    vertical-align: central;
 }
 
 header nav a:hover {
