@@ -17,9 +17,6 @@ header nav a {
     flex-direction: row;
     text-decoration: none;
     color: #ffffff;
-    justify-content: center;
-    flex-shrink: 1;
-    width: ;
 }
 
 #user {
@@ -31,5 +28,4 @@ header nav a {
 
 header nav a:hover {
     color: darkblue;
-    
 }
