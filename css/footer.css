@@ -1,18 +1,35 @@
+/* Base footer */
 footer {
+    font-weight: 500;
     background-color: #303a4f;
     color:  white;
-    padding: 20px;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
 }
 
+/* Bloc des colonnes */
 footer div.footer_col {
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
     justify-content: center;
+    margin: 0 40px;
 }
 
+footer div.footer_col div {
+    width: 33%;
+    padding-right: 15px;;
+    padding-left: 15px;;
+}
+
+footer div.footer_col div h5 {
+    margin-top: O;
+    padding-left: 10px;
+    border-left: 3px solid #dddddd;
+}
+
+/* Bloc copyright */
 footer div.footer_copyright {
     display: flex;
     flex-direction: row;
@@ -20,20 +37,13 @@ footer div.footer_copyright {
     justify-content: center;
 }
 
-footer div div ul.list_stylized {
+/* Liens */
+footer div ul.list_stylized {
     padding-left: 0px;
 }
 
-footer div.footer_col div h5 {
-    padding-left: 10px;
-    border-left: 3px solid #dddddd;
-}
-
-
-
-footer div ul li {
+footer div ul.list_stylized li {
     list-style: none;
-    padding-left: Opx;
 }
 
 footer div ul li a {
@@ -41,10 +51,10 @@ footer div ul li a {
     color: white;
 }
 
-footer div ul li a i{
-    padding-right: 10px;
-}
-
 footer div ul li a:hover {
     color: darkblue;
+}
+
+footer div ul li a i {
+    padding-right: 10px;
 }
