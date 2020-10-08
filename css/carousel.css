@@ -1,0 +1,49 @@
+.diaporama {
+    animation: slide 31s ease infinite 0s;
+    width: 700%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+@keyframes slide {
+    0%, 9.68%, 100% {
+        transform: translate(0,0);
+    }
+
+    14.52%, 24.19% {
+        transform: translate(-14.29%,0);
+    }
+
+    29.03%, 38.71% {
+        transform: translate(-28.57%,0);
+    }
+
+    43.55%, 53.23% {
+        transform: translate(-42.86%,0);
+    }
+
+    58.06%, 67.74% {
+        transform: translate(-57.14%,0);
+    }
+
+    72.58%, 82.26% {
+        transform: translate(-71.43%,0);
+    }
+
+    87.10%, 96.77% {
+        transform: translate(-85.71%,0);
+    }
+}
+
+.cadre {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
