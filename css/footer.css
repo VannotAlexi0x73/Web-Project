@@ -8,32 +8,38 @@ footer {
 }
 
 /* Bloc des colonnes */
-footer div.footer_col {
+.footer_col {
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
-    justify-content: center;
+    justify-content: space-around;
     margin: 0 40px;
 }
 
-footer div.footer_col div {
-    width: 33%;
-    padding-right: 15px;;
-    padding-left: 15px;;
+.footer_col > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-footer div.footer_col div h5 {
-    margin-top: O;
+.footer_col > div > h4 {
+    margin: auto;
+    margin-left: 0px;
     padding-left: 10px;
     border-left: 3px solid #dddddd;
 }
 
 /* Bloc copyright */
-footer div.footer_copyright {
+.footer_copyright {
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
     justify-content: center;
+}
+
+.footer_copyright > p {
+    margin-top: 0px;
 }
 
 /* Liens */
