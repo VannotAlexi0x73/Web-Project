@@ -19,9 +19,26 @@
             <nav>
                 <!-- img pour revenir sur page accueil à faire -->
                 <img href ="../accueil.html "src="../../img/favicon.png" style="width: 4%;">
-                <a href="signup.html" id="user">Pas de compte ? <button id="sign-up">Inscrivez-vous</button> </i></a>
             </nav>
         </header>
+
+        <div class="login-space">
+            <h1 class="title">Se connecter</h1>
+                    <form name="sign_in" method="post">
+                        <div>
+                            <input type="email" id="signin-username" name="sign_in[username]" required="required" class="form-input text-input vertical-spacing" placeholder="Email" />
+                        </div> <div>
+                            <input type="password" id="signin-password" name="sign_in[password]" required="required" class="form-input text-input vertical-spacing" placeholder="Mot de passe" />
+                         </div> <div>
+                            <button type="submit" id="signin-submit" name="sign_in[submit]">Se connecter</button>
+                        </div>
+                        
+                    </form>
+                    <a href="signup.html">Pas de compte ? <br><button id="sign-up">Inscrivez-vous</button> </i></a>
+        </div>
+
+        
+
 
 
     </body>
