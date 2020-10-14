@@ -13,33 +13,23 @@ header nav {
     align-items: center;
 }
 
-a {
-    text-decoration: none;
-    color:white;
-}
-
-#sign-up {
-    border: none;
-    background-color: #ffffff;
-}
-
 .accueil {
     background-image: url("../../img/favicon.png");
 }
 
-.login-space {
+.register-space {
     background-color: white;
     display: block;
     flex-direction: column;
     text-align: center;
     width: 400px;
-    height: 350px;
+    height: 400px;
     margin-left: 60em;
     margin-top: 15em;
     border-radius: 1em;
 
 }
-#signin-username , #signin-password {
+#signup-username , #signup-password {
     border: none;
     border-radius: 2px;
     background-color: whitesmoke;
@@ -48,7 +38,7 @@ a {
 
 } 
 
-#signin-submit {
+#signup-submit {
     margin-top: 15px;
     margin-bottom: 15px;
     color: #fff;
@@ -59,18 +49,17 @@ a {
     box-shadow: 0 1px 0 rgba(27,31,35,.1), inset 0 1px 0 hsla(0,0%,100%,.03);
 }
 
-#sign-up {
+#sign-in {
     color: #fff;
     padding: 5px;
     background-color: #ffc13b;
     border-color: rgba(27,31,35,.15);
     box-shadow: 0 1px 0 rgba(27,31,35,.1), inset 0 1px 0 hsla(0,0%,100%,.03);
-    text-decoration: none;
+    border-radius: 10px;
     
 }
 
-#mdp-oublié {
-    text-decoration: gray;
-    color: gray;
+a {
+    text-decoration: none;
+    color: white;
 }
-
