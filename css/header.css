@@ -1,58 +1,43 @@
 header {
+    display: flex;
+    padding: 50px 0;
+    flex-direction: column;
     background-color: #ff6e40;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-header nav {
-    margin-left: 50px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
     align-items: center;
 }
 
-header nav a {
+nav {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 0 40px;
+}
+
+nav a:hover {
     text-decoration: none;
-    color: #ffffff;
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 20px;
-}
-
-header nav form {
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    color: #ffffff;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 20px;
-}
-
-/*Les bouttons*/
-#site-search {
-    font-size: 70%;
-    size: 100%;
-    border: none;
-    border-radius: 0px;
-}
-#button-search {
-    font-size: 100%;
-    border: none;
-    background-color: white;
-    border-radius: 0px;
-}
-#user {
-    font-size: 125%;
-    text-align: right;
-
-}
-
-
-header nav a:hover {
     color: black;
+}
+
+.boutton_menu {
+    margin-left: 0px;
+    padding-left: 10px;
+    border-left: 3px solid #dddddd;
+}
+
+.boutton_menu + ul {
+    display: none;
+    list-style: none;
+}
+
+.boutton_menu:hover + ul {
+    display: list-item;
+}
+
+.boutton_menu + ul:hover {
+    display: list-item;
+}
+
+.boutton_menu + ul > li:hover {
+    background-color: lightpink;
 }

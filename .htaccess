@@ -1,0 +1,5 @@
+#custom error docs
+
+ErrorDocument 403 /errors/unautorized.php
+ErrorDocument 404 /errors/notfound.php
+ErrorDocument 500 /errors/error.php
