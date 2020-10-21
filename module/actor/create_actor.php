@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - DVD</title>
+        <title>Cin3-iL - Acteurs</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -23,58 +23,49 @@
 
             <div>
                 <div class="form_label">
-                    <label for="name">Titre<sup>*</sup></label>
+                    <label for="lastname">Nom<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="text" placeholder="ex: Avengers endgame" id="name" name="name" required="True"/>
+                    <input type="text" placeholder="ex: SPLIELBERG" id="lastname" name="lastname" required="True"/>
                 </div>
             </div>
 
             <div>
                 <div class="form_label">
-                    <label for="poster">Affiche<sup>*</sup></label>
+                    <label for="firstname">Prénom<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="file" id="poster" name="poster" required="True"/>
+                    <input type="text" placeholder="ex: Steven" id="firstname" name="firstname" required="True"/>
                 </div>
             </div>
 
             <div>
                 <div class="form_label">
-                    <label for="description">Description<sup>*</sup></label>
+                    <label for="birthday_date">Date de naissance<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="text" placeholder="ex: Description" id="description" name="description" required="True"/>
+                    <input type="date" id="birthday_date" name="birthday_date" required="True"/>
                 </div>
             </div>
 
             <div>
                 <div class="form_label">
-                    <label for="release_date">Date de sortie<sup>*</sup></label>
+                    <label for="biography">Biographie<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="date" id="release_date" name="release_date" required="True"/>
+                    <input type="text" placeholder="ex: Biographie" id="biography" name="biography" required="True"/>
                 </div>
             </div>
 
-            <div>
+            <!-- <div>
                 <div class="form_label">
-                    <label for="movie_time">Durée du film<sup>*</sup></label>
+                    <label for="movie_ids">Films<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="time" id="movie_time" name="movie_time" required="True"/>
-                </div>
-            </div>
-
-            <div>
-                <div class="form_label">
-                    <label for="tag_ids">Tags<sup>*</sup></label>
-                </div>
-                <div class="form_input">
-                    <select id="selectMultiple" name="tag_ids" required="True" onchange="multipleSelect()">
+                    <select id="selectMultiple" name="movie_ids" required="True" onchange="multipleSelect()">
                         <option value="">-- Sélectionner --</option>
                         <?php
-                            $query = $db->query("SELECT name, id from `res.tag`");
+                            $query = $db->query("SELECT name, id from `movie`");
                             while ($tagType = $query->fetch())
                             { ?>
                                 <option value="<?php echo $tagType['id']; ?>"><?php echo $tagType['name']; ?></option>
@@ -82,40 +73,37 @@
                         ?>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Submit bouton -->
             <div>
-                <button type="submit" id="create_dvd" name="create_dvd">Créer</button>
+                <button type="submit" id="create_actor" name="create_actor">Créer</button>
             </div>
 
         </form>
 
-        <script>
+        <!-- <script>
 function multipleSelect() {
     console.log("function multipleSelect()");
 
     select = document.getElementById("selectMultiple");
 
-    
-
 }
-        </script>
+        </script> -->
 
         <?php
-            if (isset($_POST['create_dvd']))
+            if (isset($_POST['create_actor']))
             {
                 extract($_POST);
-                if (!empty($name) && !empty($description) && !empty($release_date) && !empty($movie_time) && !empty($poster))
+                if (!empty($lastname) && !empty($firstname) && !empty($birthday_date) && !empty($biography))
                 {
-                    $query = $db->prepare("INSERT INTO `movie`(name, poster, description, release_date, movie_time) VALUES (:name, :poster, :description, :release_date, :movie_time)");
+                    $query = $db->prepare("INSERT INTO `res.actor`(lastname, firstname, birthday_date, biography) VALUES (:lastname, :firstname, :birthday_date, :biography)");
                     $query->execute([
-                        'name' => $name,
-                        'poster' => $poster,
-                        'description' => $description,
-                        'release_date' => $release_date,
-                        'movie_time' => $movie_time,
-                        ]);
+                        'lastname' => $lastname,
+                        'firstname' => $firstname,
+                        'birthday_date' => $birthday_date,
+                        'biography' => $biography,
+                    ]);
                     unset($_POST);
                 }
             }

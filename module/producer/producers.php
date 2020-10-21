@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Séries</title>
+        <title>Cin3-iL - Réalisateurs</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -20,15 +20,14 @@
         ?>
 
         <?php
-            $query = $db->query("SELECT name, poster, description, release_date, movie_time from `movie`");
-            while ($movie = $query->fetch())
+            $query = $db->query("SELECT lastname, firstname, birthday_date, biography from `res.actor`");
+            while ($producer = $query->fetch())
             { ?>
                 <div>
-                    <div><?php echo $movie['name']; ?></div>
-                    <img src="data:image/png;base64,<?php echo base64_encode($movie["poster"]); ?>">
-                    <div><?php echo $movie['description']; ?></div>
-                    <div><?php echo $movie['release_date']; ?></div>
-                    <div><?php echo $movie['movie_time']; ?></div>
+                    <div><?php echo $producer['lastname']; ?></div>
+                    <div><?php echo $producer['firstname']; ?></div>
+                    <div><?php echo $producer['birthday_date']; ?></div>
+                    <div><?php echo $producer['biography']; ?></div>
                     <div><i class="fas fa-edit"></i></div>
                     <div><i class="fas fa-trash-alt"></i></div>
                 </div>

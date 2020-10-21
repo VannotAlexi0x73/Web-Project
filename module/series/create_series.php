@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - DVD</title>
+        <title>Cin3-iL - Séries</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -50,19 +50,19 @@
 
             <div>
                 <div class="form_label">
-                    <label for="release_date">Date de sortie<sup>*</sup></label>
+                    <label for="season">Nombre de saison<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="date" id="release_date" name="release_date" required="True"/>
+                    <input type="number" id="season" name="season" required="True"/>
                 </div>
             </div>
 
             <div>
                 <div class="form_label">
-                    <label for="movie_time">Durée du film<sup>*</sup></label>
+                    <label for="episode">Nombre d'épisode<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="time" id="movie_time" name="movie_time" required="True"/>
+                    <input type="number" id="episode" name="episode" required="True"/>
                 </div>
             </div>
 
@@ -86,7 +86,7 @@
 
             <!-- Submit bouton -->
             <div>
-                <button type="submit" id="create_dvd" name="create_dvd">Créer</button>
+                <button type="submit" id="create_serie" name="create_serie">Créer</button>
             </div>
 
         </form>
@@ -103,18 +103,18 @@ function multipleSelect() {
         </script>
 
         <?php
-            if (isset($_POST['create_dvd']))
+            if (isset($_POST['create_serie']))
             {
                 extract($_POST);
-                if (!empty($name) && !empty($description) && !empty($release_date) && !empty($movie_time) && !empty($poster))
+                if (!empty($name) && !empty($description) && !empty($season) && !empty($episode) && !empty($poster))
                 {
-                    $query = $db->prepare("INSERT INTO `movie`(name, poster, description, release_date, movie_time) VALUES (:name, :poster, :description, :release_date, :movie_time)");
+                    $query = $db->prepare("INSERT INTO `serie`(name, poster, description, season, episode) VALUES (:name, :poster, :description, :season, :episode)");
                     $query->execute([
                         'name' => $name,
                         'poster' => $poster,
                         'description' => $description,
-                        'release_date' => $release_date,
-                        'movie_time' => $movie_time,
+                        'season' => $season,
+                        'episode' => $episode,
                         ]);
                     unset($_POST);
                 }

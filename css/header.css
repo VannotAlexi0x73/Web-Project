@@ -11,23 +11,42 @@ nav {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
-    margin: 0 40px;
+    /*width: 50%;*/
+    /*margin: 0 40px;*/
+}
+
+nav a{
+    text-decoration: none;
+    color: blue;
 }
 
 nav a:hover {
-    text-decoration: none;
     color: black;
 }
 
+nav > div{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .boutton_menu {
-    margin-left: 0px;
-    padding-left: 10px;
     border-left: 3px solid #dddddd;
+    background-color: yellow;
+}
+
+.boutton_menu:hover{
+    cursor: pointer;
 }
 
 .boutton_menu + ul {
     display: none;
     list-style: none;
+    background-color: green;
+    margin-top: 0px;
+    padding-top: 10px;
 }
 
 .boutton_menu:hover + ul {
@@ -36,6 +55,7 @@ nav a:hover {
 
 .boutton_menu + ul:hover {
     display: list-item;
+    cursor: pointer;
 }
 
 .boutton_menu + ul > li:hover {
