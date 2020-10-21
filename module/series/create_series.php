@@ -32,10 +32,10 @@
 
             <div>
                 <div class="form_label">
-                    <label for="poster">Affiche<sup>*</sup></label>
+                    <label for="image">Affiche<sup>*</sup></label>
                 </div>
                 <div class="form_input">
-                    <input type="file" id="poster" name="poster" required="True"/>
+                    <input type="file" id="image" name="image" required="True"/>
                 </div>
             </div>
 
@@ -106,12 +106,12 @@ function multipleSelect() {
             if (isset($_POST['create_serie']))
             {
                 extract($_POST);
-                if (!empty($name) && !empty($description) && !empty($season) && !empty($episode) && !empty($poster))
+                if (!empty($name) && !empty($description) && !empty($season) && !empty($episode) && !empty($image))
                 {
-                    $query = $db->prepare("INSERT INTO `serie`(name, poster, description, season, episode) VALUES (:name, :poster, :description, :season, :episode)");
+                    $query = $db->prepare("INSERT INTO `serie`(name, image, description, season, episode) VALUES (:name, :image, :description, :season, :episode)");
                     $query->execute([
                         'name' => $name,
-                        'poster' => $poster,
+                        'image' => $image,
                         'description' => $description,
                         'season' => $season,
                         'episode' => $episode,

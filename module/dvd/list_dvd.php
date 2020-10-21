@@ -20,12 +20,12 @@
         ?>
 
         <?php
-            $query = $db->query("SELECT name, poster, description, release_date, movie_time from `movie`");
+            $query = $db->query("SELECT name, image, description, release_date, movie_time from `movie`");
             while ($movie = $query->fetch())
             { ?>
                 <div>
                     <div><?php echo $movie['name']; ?></div>
-                    <img src="data:image/png;base64,<?php echo base64_encode($movie["poster"]); ?>">
+                    <img src="data:image/png;base64,<?php echo base64_encode($movie["image"]); ?>">
                     <div><?php echo $movie['description']; ?></div>
                     <div><?php echo $movie['release_date']; ?></div>
                     <div><?php echo $movie['movie_time']; ?></div>
