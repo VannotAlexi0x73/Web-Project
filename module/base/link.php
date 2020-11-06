@@ -6,6 +6,6 @@
 <link rel="stylesheet" href="../../css/form.css" type="text/css">
 <link rel="stylesheet" href="../../css/carousel.css" type="text/css">
 <link rel="stylesheet" href="../../css/list-items.css" type="text/css">
-<link rel="stylesheet" href="../../css/sign-up.css" type="text/css">
-<link rel="stylesheet" href="../../css/sign-in.css" type="text/css">
+<!-- <link rel="stylesheet" href="../../css/sign-up.css" type="text/css"> -->
+<!-- <link rel="stylesheet" href="../../css/sign-in.css" type="text/css"> -->
 <link rel="stylesheet" href="../../css/fontawesome/css/all.min.css" type="text/css">

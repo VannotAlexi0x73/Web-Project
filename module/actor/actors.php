@@ -17,24 +17,56 @@
             include "../../module/base/header.php";
             include '../../includes/database.php';
             global $db;
-        ?>
-        <div class="list_items">
-            <?php
-                $query = $db->query("SELECT lastname, firstname, birthday_date, biography from `res.actor`");
-                while ($actor = $query->fetch())
-                { ?>
-                    <div class="item">
-                        <div><?php echo $actor['lastname']; ?></div>
-                        <div><?php echo $actor['firstname']; ?></div>
-                        <div><?php echo $actor['birthday_date']; ?></div>
-                        <div><?php echo $actor['biography']; ?></div>
-                        <div><i class="fas fa-edit"></i></div>
-                        <div><i class="fas fa-trash-alt"></i></div>
-                    </div>
-                <?php }
             ?>
-        </div>
 
+        <!-- Script modification/suppression element -->
+        <script>
+            function deleteItem(str) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", "../../model.php?model=res.actor&action=delete&id=" + str, true);
+                xmlhttp.send();
+            }
+
+            function updateItem(str) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", "../../model.php?model=res.actor&action=update&id=" + str, true);
+                xmlhttp.send();
+            }
+        </script>
+
+        <section>
+            <a href="/module/actor/create_actor.php" class="create_line_link">
+                <div class="create_line">
+                    <h2>Ajouter un acteur</h2>
+                </div>
+            </a>
+        </section>
+
+        <section>
+            <div class="list_items">
+                <?php
+                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `res.actor`");
+                    while ($actor = $query->fetch())
+                    { ?>
+                    <div class="item">
+                        <div class="item_image">
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($donnees['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                        </div>
+                        <div class="item_description">
+                            <div><span class="item_label">Nom :</span><?php echo $actor['lastname']; ?></div>
+                            <div><span class="item_label">Prénom :</span><?php echo $actor['firstname']; ?></div>
+                            <div><span class="item_label">Date de naissance :</span><?php echo $actor['birthday_date']; ?></div>
+                            <div><span class="item_label">Biographie :</span><?php echo $actor['biography']; ?></div>
+                            <div class="item_buttons">
+                                <a onclick="updateItem(<?php echo $actor['id']; ?>)">Modifier</a>
+                                <a onclick="deleteItem(<?php echo $actor['id']; ?>)">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
+        
         <!-- Include footer -->
         <?php include "../../module/base/footer.php"; ?>
     </body>

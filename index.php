@@ -1,2 +1,3 @@
 <?php
-header("Location: /accueil.php");
+    header("Location: /accueil.php");
+?>

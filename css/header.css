@@ -1,18 +1,13 @@
 header {
-    display: flex;
-    padding: 50px 0;
-    flex-direction: column;
+    padding: 40px 0;
     background-color: #ff6e40;
-    align-items: center;
 }
 
 nav {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-around;
-    /*width: 50%;*/
-    /*margin: 0 40px;*/
+    margin: 0 40px;
 }
 
 nav a{
@@ -24,29 +19,23 @@ nav a:hover {
     color: black;
 }
 
-nav > div{
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .boutton_menu {
-    border-left: 3px solid #dddddd;
-    background-color: yellow;
+    border-left: 3px solid #f5f0e1;
+    padding-left: 15px;
+    text-align: center;
 }
 
 .boutton_menu:hover{
     cursor: pointer;
+    background-color: #e56339;
 }
 
 .boutton_menu + ul {
     display: none;
     list-style: none;
-    background-color: green;
-    margin-top: 0px;
-    padding-top: 10px;
+    background-color: #e56339;
+    margin: 0px;
+    padding: 15px;
 }
 
 .boutton_menu:hover + ul {
@@ -60,4 +49,12 @@ nav > div{
 
 .boutton_menu + ul > li:hover {
     background-color: lightpink;
+}
+
+
+/* Responsive */
+@media (max-width: 550px) {
+    nav {
+        flex-direction: column;
+    }
 }

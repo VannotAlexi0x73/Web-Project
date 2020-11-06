@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Séries</title>
+        <title>Cin3-iL - DVD</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">

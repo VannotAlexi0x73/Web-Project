@@ -1,3 +1,24 @@
+/* Bouton création nouvel element */
+.create_line_link {
+    margin: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.create_line_link > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: bisque;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.create_line_link > div > h2 {
+    margin: 10px;
+}
+
+/* Affichage en liste des elements */
 .list_items {
     display: flex;
     flex-direction: column;
@@ -5,8 +26,39 @@
 }
 
 .item {
+    display: flex;
+    flex-direction: row;
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
     width: 50%;
+    overflow: auto;
+}
+
+.item_image {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.item_description {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.item_description .item_buttons {
+    color: black;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.item_label {
+    font-weight: bold;
+    padding-right: 5px;
 }

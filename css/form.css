@@ -1,20 +1,16 @@
 .form_create > div {
     display: flex;
-    flex-direction: row;
-    padding: 15px;
     justify-content: center;
+    padding: 15px;
 }
 
 .form_label {
-    display: flex;
-    flex-direction: column;
+    text-align: right;
     padding: 15px;
-    align-self: flex-end;
 }
 
 .form_input {
     display: flex;
     flex-direction: column;
     padding: 15px;
-    align-self: flex-start;
 }
