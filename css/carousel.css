@@ -1,14 +1,25 @@
-.diaporama {
-    animation: slide 31s ease infinite 0s;
-    width: 700%;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 
-@keyframes slide {
+.carousel {
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+    width: 500px;
+    /* border: 5px solid green; */
+}
+
+.images_carousel {
+    display: flex;
+    width: 100%;
+    height: 500px;
+
+}
+
+/* @keyframes slide {
     0%, 9.68%, 100% {
         transform: translate(0,0);
     }
@@ -36,14 +47,4 @@
     87.10%, 96.77% {
         transform: translate(-85.71%,0);
     }
-}
-
-.cadre {
-    position: relative;
-    width: 400px;
-    overflow: hidden;
-    border-radius: 5px;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
+} */
