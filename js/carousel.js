@@ -30,12 +30,12 @@ prev_Button.addEventListener('click',()=>{
 
 
 carousel.addEventListener('transitionend', () => {
-    if (caarouselImages[counter].id === 'lastClone') {
+    if (carouselImages[counter].id === 'lastClone') {
         carousel.style.transition = "none";
         counter = carouselImages.length - 2;
         carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-    if (caarouselImages[counter].id === 'firstClone') {
+    if (carouselImages[counter].id === 'firstClone') {
         carousel.style.transition = "none";
         counter = carouselImages.length - counter;
         carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';

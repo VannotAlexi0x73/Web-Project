@@ -12,32 +12,53 @@
 
     </head>
 
-    <body style="background-image: url('../../img/alone-on-mars.jpg');">
+    <body class="login_body">
+
+        <!-- HEADER -->
         <header>
             <nav>
-                <!-- img pour revenir sur page accueil à faire -->
-                <img href ="../accueil.html "src="../../img/favicon.png" style="width: 4%;">
+                <a href="/accueil.php">
+                    <img src="../../img/favicon.png">
+                </a>
             </nav>
         </header>
 
-        <div class="login-space">
-            <h1 class="title">Se connecter</h1>
-            <form name="sign_in" method="post">
+        <!-- DIV LOGIN -->
+        <div class="div_login">
+            <h1>Se connecter</h1>
+            <form class="form_login" method="post">
                 <div>
-                    <input type="email" id="signin-username" name="login" required="True" class="form-input text-input vertical-spacing" placeholder="Email" />
+                    <label for="login">Identifiant<sup>*</sup></label>
+                    <input type="email" id="login" name="login" placeholder="abc@example.uk" required="True"/>
                 </div>
                 <div>
-                    <input type="password" id="signin-password" name="password" required="True" class="form-input text-input vertical-spacing" placeholder="Mot de passe" />
+                    <label for="password">Mot de passe<sup>*</sup></label>
+                    <input type="password" id="password" name="password" placeholder="*******" required="True"/>
                 </div>
-                <div>
-                    <a id="mdp-oublié" href="mdp_oublié">Mot de passe oublié ?</a> 
-                </div>
-                <div>
-                    <button type="submit" id="signin-submit" name="sign_in[submit]">Se connecter</button>
-                </div>
+                <button type="submit" id="sign_in" name="sign_in" class="login_submit">Se connecter</button>
             </form>
-            <p>Pas de compte ? <br><button id="sign-up"><a href="sign_up.php">Inscrivez-vous</a></button> </i></p>
+            <div>
+                Pas de compte ?<a href="sign_up.php">Inscrivez-vous</a>
+            </div>
         </div>
+
+        <?php
+            if (isset($_POST['sign_in']))
+            {
+                extract($_POST);
+                if ($login && $password)
+                {
+                    $query = $db->query("SELECT login from `res.actor` WHERE login=$login AND password=$password LIMIT 1");
+                    if ($query) {
+                        session_start();
+                        $_SESSION['res.user'] = "$query['login']";
+                    } else {
+
+                    }
+                    unset($_POST);
+                }
+            }
+        ?>
 
     </body>
 

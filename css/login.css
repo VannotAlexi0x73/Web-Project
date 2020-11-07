@@ -1,0 +1,93 @@
+.login_body {
+    background-repeat: no-repeat;
+    background-image: url(../../img/alone-on-mars.jpg);
+}
+.div_login {
+    background-color: white;
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.div_login > h1 {
+    text-align: center;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+/* Input */
+.form_login input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.form_login input:focus {
+    outline: none !important;
+    border-color: #ff6e40;
+    box-shadow: 0 0 10px #ff6e40;
+}
+
+
+/* Bouton de submit */
+.login_submit {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    background: #ff6e40;
+    margin-bottom: 20px;
+}
+
+.login_submit:hover {
+    cursor: pointer;
+    background: #fa4911;
+}
+
+/* Bloc se connecter */
+.div_login > div {
+    text-align: center;
+}
+
+.div_login > div > a {
+    margin: 10px;
+    color: #ff6e40;
+    text-decoration: none;
+}
+
+.div_login > div > a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 550px) {
+    .div_login {
+        left: 15%;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 768px) {
+    .div_login {
+        left: 25%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .div_login {
+        left: 45%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .div_login {
+        left: 55%;
+    }
+}

@@ -1,22 +1,28 @@
 header {
-    padding: 40px 0;
     background-color: #ff6e40;
+}
+
+header img {
+    width: 100px; 
+    height: 100px; 
 }
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    /* justify-content: space-between; */
+    align-items: center;
     margin: 0 40px;
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    color: blue;
+    color: black;
 }
 
 nav a:hover {
-    color: black;
+    font-weight: bolder;
 }
 
 .boutton_menu {
@@ -49,6 +55,32 @@ nav a:hover {
 
 .boutton_menu + ul > li:hover {
     background-color: lightpink;
+}
+
+/* Bouttons de connexion */
+.button_login {
+    display: flex;
+    flex-direction: row;
+}
+
+.button_sign_in {
+    margin-right: 15px;
+}
+
+.button_sign_in > a {
+    cursor: pointer;
+    background-color: lightcoral;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button_sign_up {
+    cursor: pointer;
+    background-color: lightpink;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 

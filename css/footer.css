@@ -7,6 +7,15 @@ footer {
     flex-direction: column;
 }
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: gray !important;
+}
+
 /* Bloc des colonnes */
 .footer_col {
     display: flex;
@@ -46,14 +55,6 @@ footer div ul.list_stylized li {
     list-style: none;
 }
 
-footer div ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-footer div ul li a:hover {
-    color: darkblue;
-}
 
 footer div ul li a i {
     padding-right: 10px;
