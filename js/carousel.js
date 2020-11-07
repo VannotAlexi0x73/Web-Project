@@ -15,7 +15,7 @@ const next_Button = document.querySelector('#next_Button');
 //Buttons listeners
 next_Button.addEventListener('click',()=>{
     if (counter >= carouselImages.length - 1) return;
-    carousel.style.transition = "width 1s ease-in-out 0s";
+    carousel.style.transition = "transform 0.4s ease-in-out";
     counter++;
     // console.log(counter);
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -23,7 +23,7 @@ next_Button.addEventListener('click',()=>{
 
 prev_Button.addEventListener('click',()=>{
     if (counter <= 0) return;
-    carousel.style.transition = "tranform 0.4s ease-in-out;";
+    carousel.style.transition = "transform 0.4s ease-in-out";
     counter--;
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
