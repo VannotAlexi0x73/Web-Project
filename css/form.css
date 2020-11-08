@@ -1,3 +1,16 @@
+.form_create {
+    width: 700px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.form_create > table {
+    width: 100%;
+}
+
 .form_create > div {
     display: flex;
     justify-content: center;
@@ -5,12 +18,20 @@
 }
 
 .form_label {
+    width: 25%;
     text-align: right;
     padding: 15px;
 }
 
 .form_input {
-    display: flex;
-    flex-direction: column;
+    width: 75%;
     padding: 15px;
+}
+
+.form_input > input {
+    width: 100%;
+}
+
+.form_input > textarea {
+    width: 100%;
 }

@@ -14,6 +14,12 @@
 
     <body class="login_body">
 
+        <!-- Include db -->
+        <?php
+            include '../../includes/database.php';
+            global $db;
+        ?>
+
         <!-- HEADER -->
         <header>
             <nav>
@@ -48,10 +54,15 @@
                 extract($_POST);
                 if ($login && $password)
                 {
-                    $query = $db->query("SELECT login from `res.actor` WHERE login=$login AND password=$password LIMIT 1");
-                    if ($query) {
+                    $user = $db->query("SELECT login from `res.user` WHERE login='$login' AND password='$password' LIMIT 1");
+                    if ($user) {
                         session_start();
-                        $_SESSION['res.user'] = "$query['login']";
+                        $user = $user->fetch();
+                        $_SESSION['res.user'] = [
+                            'login' => $user['login'],
+                            'role' => 'user',
+                        ];
+                        echo "Tu es " . $_SESSION['res.user']['login'];
                     } else {
 
                     }
