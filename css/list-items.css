@@ -46,16 +46,37 @@
     padding: 10px;
 }
 
-.item_description .item_buttons {
+.item_buttons {
     color: black;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding: 10px 0;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item_buttons > a {
+    color: black;
     cursor: pointer;
+    padding: 2px 7px 2px 7px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#update {
+    background-color: #d9ffa8;
+}
+
+#update:hover {
+    background-color: #b1e371;
+}
+
+#delete {
+    background-color: #ff958f;
+}
+
+#delete:hover {
+    background-color: #ff584f;
 }
 
 .item_label {

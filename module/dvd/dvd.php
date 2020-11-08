@@ -35,32 +35,36 @@
         </script>
 
         <section>
+            <?php if (isset($_SESSION['auth'])): ?>
             <a href="/module/dvd/create_dvd.php" class="create_line_link">
                 <div class="create_line">
                     <h2>Ajouter un DVD</h2>
                 </div>
             </a>
+            <?php endif; ?>
         </section>
 
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `movie`");
-                    while ($producer = $query->fetch())
+                    $query = $db->query("SELECT id, name, image, description, movie_time, release_date from `movie`");
+                    while ($dvd = $query->fetch())
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($donnees['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($dvd['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
                         </div>
                         <div class="item_description">
-                            <div><span class="item_label">Nom :</span><?php echo $producer['lastname']; ?></div>
-                            <div><span class="item_label">Prénom :</span><?php echo $producer['firstname']; ?></div>
-                            <div><span class="item_label">Date de naissance :</span><?php echo $producer['birthday_date']; ?></div>
-                            <div><span class="item_label">Biographie :</span><?php echo $producer['biography']; ?></div>
+                            <div><span class="item_label">Titre :</span><?php echo $dvd['name']; ?></div>
+                            <div><span class="item_label">Durée du film :</span><?php echo $dvd['movie_time']; ?></div>
+                            <div><span class="item_label">Date de sortie :</span><?php echo $dvd['release_date']; ?></div>
+                            <div><span class="item_label">Description :</span><?php echo $dvd['description']; ?></div>
+                            <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a onclick="updateItem(<?php echo $producer['id']; ?>)">Modifier</a>
-                                <a onclick="deleteItem(<?php echo $producer['id']; ?>)">Supprimer</a>
+                                <a id="update" onclick="updateItem(<?php echo $dvd['id']; ?>)">Modifier</a>
+                                <a id="delete" onclick="deleteItem(<?php echo $dvd['id']; ?>)">Supprimer</a>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php } ?>

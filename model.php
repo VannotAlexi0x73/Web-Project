@@ -15,4 +15,4 @@
 
     unset($_GET);
 
-?>
+    header('Location: ../../accueil.php');

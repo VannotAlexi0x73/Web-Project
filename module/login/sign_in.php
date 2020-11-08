@@ -54,17 +54,16 @@
                 extract($_POST);
                 if ($login && $password)
                 {
-                    $user = $db->query("SELECT login from `res.user` WHERE login='$login' AND password='$password' LIMIT 1");
+                    $user = $db->query("SELECT * from `res.user` WHERE login='$login' AND password='$password' LIMIT 1");
                     if ($user) {
                         session_start();
                         $user = $user->fetch();
-                        $_SESSION['res.user'] = [
-                            'login' => $user['login'],
-                            'role' => 'user',
-                        ];
-                        echo "Tu es " . $_SESSION['res.user']['login'];
+                        $_SESSION['auth'] = $user;
+                        $_SESSION['flash']['danger'] = "Vous êtes maintenant connecté.";
+                        header('Location: ../../accueil.php');
+                        exit();
                     } else {
-
+                        $_SESSION['flash']['danger'] = "Identifiant ou mot de passe incorrect.";
                     }
                     unset($_POST);
                 }

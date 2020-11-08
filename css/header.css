@@ -83,6 +83,15 @@ nav a:hover {
     padding: 5px;
 }
 
+/* Boutton de deconnexion */
+.button_logout {
+    cursor: pointer;
+    background-color: lightpink;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 
 /* Responsive */
 @media (max-width: 550px) {

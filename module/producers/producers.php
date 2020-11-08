@@ -35,11 +35,13 @@
         </script>
 
         <section>
+            <?php if (isset($_SESSION['auth'])): ?>
             <a href="/module/producers/create_producer.php" class="create_line_link">
                 <div class="create_line">
                     <h2>Ajouter un réalisateur</h2>
                 </div>
             </a>
+            <?php endif; ?>
         </section>
 
         <section>
@@ -50,17 +52,19 @@
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($donnees['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($producer['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
                         </div>
                         <div class="item_description">
                             <div><span class="item_label">Nom :</span><?php echo $producer['lastname']; ?></div>
                             <div><span class="item_label">Prénom :</span><?php echo $producer['firstname']; ?></div>
                             <div><span class="item_label">Date de naissance :</span><?php echo $producer['birthday_date']; ?></div>
                             <div><span class="item_label">Biographie :</span><?php echo $producer['biography']; ?></div>
+                            <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
                                 <a onclick="updateItem(<?php echo $producer['id']; ?>)">Modifier</a>
                                 <a onclick="deleteItem(<?php echo $producer['id']; ?>)">Supprimer</a>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php } ?>

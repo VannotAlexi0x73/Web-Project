@@ -35,11 +35,13 @@
         </script>
 
         <section>
+            <?php if (isset($_SESSION['auth'])): ?>
             <a href="/module/cinemas/create_cinema.php" class="create_line_link">
                 <div class="create_line">
                     <h2>Ajouter un film à l'affiche</h2>
                 </div>
             </a>
+            <?php endif; ?>
         </section>
 
         <section>
@@ -57,10 +59,12 @@
                             <div><span class="item_label">Prénom :</span><?php echo $actor['firstname']; ?></div>
                             <div><span class="item_label">Date de naissance :</span><?php echo $actor['birthday_date']; ?></div>
                             <div><span class="item_label">Biographie :</span><?php echo $actor['biography']; ?></div>
+                            <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
                                 <a onclick="updateItem(<?php echo $actor['id']; ?>)">Modifier</a>
                                 <a onclick="deleteItem(<?php echo $actor['id']; ?>)">Supprimer</a>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php } ?>
