@@ -47,7 +47,7 @@
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `res.producer`");
+                    $query = $db->query("SELECT id, image, lastname, firstname, birthday_date, biography from `res.producer`");
                     while ($producer = $query->fetch())
                     { ?>
                     <div class="item">
@@ -61,8 +61,8 @@
                             <div><span class="item_label">Biographie :</span><?php echo $producer['biography']; ?></div>
                             <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a onclick="updateItem(<?php echo $producer['id']; ?>)">Modifier</a>
-                                <a onclick="deleteItem(<?php echo $producer['id']; ?>)">Supprimer</a>
+                                <a id="update" onclick="updateItem(<?php echo $producer['id']; ?>)">Modifier</a>
+                                <a id="delete" onclick="deleteItem(<?php echo $producer['id']; ?>)">Supprimer</a>
                             </div>
                             <?php endif; ?>
                         </div>

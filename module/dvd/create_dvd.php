@@ -44,15 +44,6 @@
 
                     <tr>
                         <td class="form_label">
-                            <label for="description">Description<sup>*</sup></label>
-                        </td>
-                        <td class="form_input">
-                            <textarea id="description" name="description" rows="10" placeholder="ex: Description" required="True"></textarea>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="form_label">
                             <label for="release_date">Date de sortie<sup>*</sup></label>
                         </td>
                         <td class="form_input">
@@ -66,6 +57,15 @@
                         </td>
                         <td class="form_input">
                             <input type="time" id="movie_time" name="movie_time" required="True"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form_label">
+                            <label for="description">Description<sup>*</sup></label>
+                        </td>
+                        <td class="form_input">
+                            <textarea id="description" name="description" rows="10" placeholder="ex: Description..." required="True"></textarea>
                         </td>
                     </tr>
 

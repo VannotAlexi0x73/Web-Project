@@ -47,22 +47,22 @@
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `cinema`");
-                    while ($actor = $query->fetch())
+                    $query = $db->query("SELECT id, name, image, description, season, episode from `serie`");
+                    while ($serie = $query->fetch())
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($donnees['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($serie['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
                         </div>
                         <div class="item_description">
-                            <div><span class="item_label">Nom :</span><?php echo $actor['lastname']; ?></div>
-                            <div><span class="item_label">Prénom :</span><?php echo $actor['firstname']; ?></div>
-                            <div><span class="item_label">Date de naissance :</span><?php echo $actor['birthday_date']; ?></div>
-                            <div><span class="item_label">Biographie :</span><?php echo $actor['biography']; ?></div>
+                            <div><span class="item_label">Titre :</span><?php echo $serie['name']; ?></div>
+                            <div><span class="item_label">Saisons :</span><?php echo $serie['season']; ?></div>
+                            <div><span class="item_label">Episodes :</span><?php echo $serie['episode']; ?></div>
+                            <div><span class="item_label">Description :</span><?php echo $serie['description']; ?></div>
                             <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a onclick="updateItem(<?php echo $actor['id']; ?>)">Modifier</a>
-                                <a onclick="deleteItem(<?php echo $actor['id']; ?>)">Supprimer</a>
+                                <a id="update" onclick="updateItem(<?php echo $serie['id']; ?>)">Modifier</a>
+                                <a id="delete" onclick="deleteItem(<?php echo $serie['id']; ?>)">Supprimer</a>
                             </div>
                             <?php endif; ?>
                         </div>

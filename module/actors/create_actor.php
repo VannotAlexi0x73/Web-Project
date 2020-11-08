@@ -29,7 +29,7 @@
                             <label for="lastname">Nom<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="text" id="lastname" name="lastname" placeholder="ex: SPLIELBERG" onkeyup="upperWord('lastname')" required="True"/>
+                            <input type="text" id="lastname" name="lastname" placeholder="ex: STATHAM" onkeyup="upperWord('lastname')" required="True"/>
                         </td>
                     </tr>
 
@@ -38,13 +38,13 @@
                             <label for="firstname">Prénom<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="text" id="firstname" name="firstname" placeholder="ex: Steven" required="True"/>
+                            <input type="text" id="firstname" name="firstname" placeholder="ex: Jason" required="True"/>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="form_label">
-                            <label for="image">Affiche<sup>*</sup></label>
+                            <label for="image">Photo<sup>*</sup></label>
                         </td>
                         <td class="form_input">
                             <input type="file" id="image" name="image" required="True"/>
@@ -65,7 +65,7 @@
                             <label for="biography">Biographie<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <textarea id="biography" name="biography" rows="10" placeholder="ex: Biographie" required="True"></textarea>
+                            <textarea id="biography" name="biography" rows="10" placeholder="ex: Biographie..." required="True"></textarea>
                         </td>
                     </tr>
 
