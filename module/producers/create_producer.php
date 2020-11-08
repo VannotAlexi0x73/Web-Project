@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Créer un réalisateur</title>
+        <title>Cin3-iL - Ajouter un réalisateur</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">

@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Ajouter une série</title>
+        <title>Cin3-iL - Ajouter un film à l'affiche</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -22,14 +22,14 @@
 
         <section>
             <form method="post" class="form_create">
-                <h1><u>Série</u></h1>
+                <h1><u>Film à l'affiche</u></h1>
                 <table>
                     <tr>
                         <td class="form_label">
-                            <label for="name">Nom<sup>*</sup></label>
+                            <label for="name">Titre<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="text" id="name" name="name" placeholder="ex: LA CASA DE PAPEL" onkeyup="upperWord('name')" required="True"/>
+                            <input type="text" id="name" name="name" placeholder="ex: 30 jours max" onkeyup="upperWord('name')" required="True"/>
                         </td>
                     </tr>
 
@@ -39,24 +39,6 @@
                         </td>
                         <td class="form_input">
                             <input type="file" id="image" name="image" required="True"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="form_label">
-                            <label for="season">Nombre de saisons<sup>*</sup></label>
-                        </td>
-                        <td class="form_input">
-                            <input type="number" id="season" name="season" placeholder="3" required="True"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="form_label">
-                            <label for="episode">Nombre d'épisodes<sup>*</sup></label>
-                        </td>
-                        <td class="form_input">
-                            <input type="number" id="episode" name="episode" placeholder="24" required="True"/>
                         </td>
                     </tr>
 
@@ -72,25 +54,23 @@
                 </table>
                 <!-- Submit bouton -->
                 <div>
-                    <button type="submit" id="create_serie" name="create_serie">Créer</button>
+                    <button type="submit" id="create_movie_showing" name="create_movie_showing">Créer</button>
                 </div>
 
             </form>
         </section>
 
         <?php
-            if (isset($_POST['create_serie']))
+            if (isset($_POST['create_movie_showing']))
             {
                 extract($_POST);
-                if ($name && $image && $description && $season && $episode)
+                if ($name && $image && $description)
                 {
-                    $query = $db->prepare("INSERT INTO `serie`(name, image, description, season, episode) VALUES (:name, :image, :description, :season,  :episode)");
+                    $query = $db->prepare("INSERT INTO `movie.showing`(name, image, description) VALUES (:name, :image, :description)");
                     $query->execute([
                         'name' => $name,
                         'image' => $image,
                         'description' => $description,
-                        'season' => $season,
-                        'episode' => $episode,
                     ]);
                     unset($_POST);
                 }

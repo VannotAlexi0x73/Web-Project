@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - DVD</title>
+        <title>Cin3-iL - Films</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -36,9 +36,9 @@
 
         <section>
             <?php if (isset($_SESSION['auth'])): ?>
-            <a href="/module/dvd/create_dvd.php" class="create_line_link">
+            <a href="/module/movies/create_movie.php" class="create_line_link">
                 <div class="create_line">
-                    <h2>Ajouter un DVD</h2>
+                    <h2>Ajouter un film</h2>
                 </div>
             </a>
             <?php endif; ?>

@@ -23,20 +23,20 @@
         <script>
             function deleteItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=cinema&action=delete&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=movie.showing&action=delete&id=" + str, true);
                 xmlhttp.send();
             }
 
             function updateItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=cinema&action=update&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=movie.showing&action=update&id=" + str, true);
                 xmlhttp.send();
             }
         </script>
 
         <section>
             <?php if (isset($_SESSION['auth'])): ?>
-            <a href="/module/cinemas/create_cinema.php" class="create_line_link">
+            <a href="/module/movie_showing/create_movie_showing.php" class="create_line_link">
                 <div class="create_line">
                     <h2>Ajouter un film à l'affiche</h2>
                 </div>
@@ -47,22 +47,20 @@
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `cinema`");
-                    while ($actor = $query->fetch())
+                    $query = $db->query("SELECT id, name, image, description from `movie.showing`");
+                    while ($movieShowing = $query->fetch())
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($donnees['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($movieShowing['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
                         </div>
                         <div class="item_description">
-                            <div><span class="item_label">Nom :</span><?php echo $actor['lastname']; ?></div>
-                            <div><span class="item_label">Prénom :</span><?php echo $actor['firstname']; ?></div>
-                            <div><span class="item_label">Date de naissance :</span><?php echo $actor['birthday_date']; ?></div>
-                            <div><span class="item_label">Biographie :</span><?php echo $actor['biography']; ?></div>
+                            <div><span class="item_label">Nom :</span><?php echo $movieShowing['name']; ?></div>
+                            <div><span class="item_label">Description :</span><?php echo $movieShowing['description']; ?></div>
                             <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a onclick="updateItem(<?php echo $actor['id']; ?>)">Modifier</a>
-                                <a onclick="deleteItem(<?php echo $actor['id']; ?>)">Supprimer</a>
+                                <a onclick="updateItem(<?php echo $movieShowing['id']; ?>)">Modifier</a>
+                                <a onclick="deleteItem(<?php echo $movieShowing['id']; ?>)">Supprimer</a>
                             </div>
                             <?php endif; ?>
                         </div>

@@ -15,13 +15,13 @@ if (session_status() == PHP_SESSION_NONE) {
             <!-- <div>
                 <i class="fas fa-bars"></i>
             </div> -->
-            <div class="boutton_menu" onclick="window.location='/module/cinemas/cinemas.php';">Cinéma</div>
+            <div class="boutton_menu" onclick="window.location='/module/movie_showing/movie_showing.php';">A l'affiche</div>
         </div>
         <div>
             <div class="boutton_menu" onclick="window.location='/module/series/series.php';">Séries</div>
         </div>
         <div>
-            <div class="boutton_menu" onclick="window.location='/module/dvd/dvd.php';">DVD</div>
+            <div class="boutton_menu" onclick="window.location='/module/movies/movies.php';">Films</div>
         </div>
         <div>
             <div class="boutton_menu" onclick="window.location='/module/actors/actors.php';">Acteurs</div>

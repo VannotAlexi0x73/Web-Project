@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Créer un acteur</title>
+        <title>Cin3-iL - Ajouter un acteur</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
