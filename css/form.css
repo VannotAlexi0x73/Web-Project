@@ -29,9 +29,13 @@
 }
 
 .form_input > input {
+    padding: 5px;
+    box-sizing: border-box;
     width: 100%;
 }
 
 .form_input > textarea {
+    padding: 5px;
+    box-sizing: border-box;
     width: 100%;
 }
