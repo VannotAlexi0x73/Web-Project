@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - DVD</title>
+        <title>Cin3-iL - Réalisateurs</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -17,27 +17,27 @@
             include "../../module/base/header.php";
             include '../../includes/database.php';
             global $db;
-        ?>
+            ?>
 
         <!-- Script modification/suppression element -->
         <script>
             function deleteItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=movie&action=delete&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=res.producer&action=delete&id=" + str, true);
                 xmlhttp.send();
             }
 
             function updateItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=movie&action=update&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=res.producer&action=update&id=" + str, true);
                 xmlhttp.send();
             }
         </script>
 
         <section>
-            <a href="/module/dvd/create_dvd.php" class="create_line_link">
+            <a href="/module/producers/create_producer.php" class="create_line_link">
                 <div class="create_line">
-                    <h2>Ajouter un DVD</h2>
+                    <h2>Ajouter un réalisateur</h2>
                 </div>
             </a>
         </section>
@@ -45,7 +45,7 @@
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `movie`");
+                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `res.producer`");
                     while ($producer = $query->fetch())
                     { ?>
                     <div class="item">

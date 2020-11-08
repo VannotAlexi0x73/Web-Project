@@ -7,6 +7,10 @@
     margin: 15px;
 }
 
+.form_create > h1 {
+    text-align: center;
+}
+
 .form_create > table {
     width: 100%;
 }
@@ -38,4 +42,20 @@
     padding: 5px;
     box-sizing: border-box;
     width: 100%;
+}
+
+.form_create button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    background-color: #A8A8A8;
+    border-radius: 5px;
+}
+
+
+.form_create button[type="submit"]:hover {
+    background-color: #979797;
 }

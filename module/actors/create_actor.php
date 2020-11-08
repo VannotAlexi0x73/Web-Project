@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Acteurs</title>
+        <title>Cin3-iL - Créer un acteur</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -22,6 +22,7 @@
 
         <section>
             <form method="post" class="form_create">
+                <h1><u>Acteur</u></h1>
                 <table>
                     <tr>
                         <td class="form_label">
@@ -68,22 +69,6 @@
                         </td>
                     </tr>
 
-                    <!-- <div>
-                        <div class="form_label">
-                            <label for="movie_ids">Films<sup>*</sup></label>
-                        </div>
-                        <div class="form_input">
-                            <select id="selectMultiple" name="movie_ids" required="True" onchange="multipleSelect()">
-                                <option value="">-- Sélectionner --</option>
-                                <?php
-                                    $query = $db->query("SELECT name, id from `movie`");
-                                    while ($tagType = $query->fetch())
-                                    { ?>
-                                    <option value="<?php echo $tagType['id']; ?>"><?php echo $tagType['name']; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div> -->
                 </table>
                 <!-- Submit bouton -->
                 <div>
@@ -124,3 +109,21 @@ function multipleSelect() {
     </body>
 
 </html>
+
+
+<!-- <div>
+    <div class="form_label">
+        <label for="movie_ids">Films<sup>*</sup></label>
+    </div>
+    <div class="form_input">
+        <select id="selectMultiple" name="movie_ids" required="True" onchange="multipleSelect()">
+            <option value="">-- Sélectionner --</option>
+            <?php
+                $query = $db->query("SELECT name, id from `movie`");
+                while ($tagType = $query->fetch())
+                { ?>
+                <option value="<?php echo $tagType['id']; ?>"><?php echo $tagType['name']; ?></option>
+            <?php } ?>
+        </select>
+    </div>
+</div> -->

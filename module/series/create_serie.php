@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Créer un DVD</title>
+        <title>Cin3-iL - Créer une série</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -22,14 +22,14 @@
 
         <section>
             <form method="post" class="form_create">
-                <h1><u>DVD</u></h1>
+                <h1><u>Série</u></h1>
                 <table>
                     <tr>
                         <td class="form_label">
-                            <label for="name">Titre<sup>*</sup></label>
+                            <label for="name">Nom<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="text" id="name" name="name" placeholder="ex: Avengers endgame" onkeyup="upperWord('name')" required="True"/>
+                            <input type="text" id="name" name="name" placeholder="ex: SPLIELBERG" onkeyup="upperWord('name')" required="True"/>
                         </td>
                     </tr>
 
@@ -47,51 +47,58 @@
                             <label for="description">Description<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <textarea id="description" name="description" rows="10" placeholder="ex: Description" required="True"></textarea>
+                            <textarea id="description" name="description" rows="10" placeholder="ex: Description..." required="True"></textarea>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="form_label">
-                            <label for="release_date">Date de sortie<sup>*</sup></label>
+                            <label for="season">Nombre de saisons<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="date" id="release_date" name="release_date" required="True"/>
+                            <input type="number" id="season" name="season" required="True"/>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="form_label">
-                            <label for="movie_time">Durée du film<sup>*</sup></label>
+                            <label for="episode">Nombre d'épisodes<sup>*</sup></label>
                         </td>
                         <td class="form_input">
-                            <input type="time" id="movie_time" name="movie_time" required="True"/>
+                            <input type="number" id="episode" name="episode" required="True"/>
                         </td>
                     </tr>
 
                 </table>
                 <!-- Submit bouton -->
                 <div>
-                    <button type="submit" id="create_dvd" name="create_dvd">Créer</button>
+                    <button type="submit" id="create_serie" name="create_serie">Créer</button>
                 </div>
 
             </form>
         </section>
 
+    <script>
+function multipleSelect() {
+    console.log("function multipleSelect()");
+    select = document.getElementById("selectMultiple");
+}
+        </script>
+
         <?php
-            if (isset($_POST['create_dvd']))
+            if (isset($_POST['create_serie']))
             {
                 extract($_POST);
-                if (!empty($name) && !empty($description) && !empty($release_date) && !empty($movie_time) && !empty($image))
+                if ($name && $image && $description && $season && $episode)
                 {
-                    $query = $db->prepare("INSERT INTO `movie`(name, image, description, release_date, movie_time) VALUES (:name, :image, :description, :release_date, :movie_time)");
+                    $query = $db->prepare("INSERT INTO `res.actor`(name, image, description, season, episode) VALUES (:name, :image, :description, :season,  :episode)");
                     $query->execute([
                         'name' => $name,
                         'image' => $image,
                         'description' => $description,
-                        'release_date' => $release_date,
-                        'movie_time' => $movie_time,
-                        ]);
+                        'season' => $season,
+                        'episode' => $episode,
+                    ]);
                     unset($_POST);
                 }
             }
@@ -105,19 +112,18 @@
 
 
 <!-- <div>
-                <div class="form_label">
-                    <label for="tag_ids">Tags<sup>*</sup></label>
-                </div>
-                <div class="form_input">
-                    <select id="selectMultiple" name="tag_ids" required="True" onchange="multipleSelect()">
-                        <option value="">-- Sélectionner --</option>
-                        <?php
-                            $query = $db->query("SELECT name, id from `res.tag`");
-                            while ($tagType = $query->fetch())
-                            { ?>
-                                <option value="<?php echo $tagType['id']; ?>"><?php echo $tagType['name']; ?></option>
-                            <?php }
-                        ?>
-                    </select>
-                </div>
-            </div> -->
+    <div class="form_label">
+        <label for="movie_ids">Films<sup>*</sup></label>
+    </div>
+    <div class="form_input">
+        <select id="selectMultiple" name="movie_ids" required="True" onchange="multipleSelect()">
+            <option value="">-- Sélectionner --</option>
+            <?php
+                $query = $db->query("SELECT name, id from `movie`");
+                while ($tagType = $query->fetch())
+                { ?>
+                <option value="<?php echo $tagType['id']; ?>"><?php echo $tagType['name']; ?></option>
+            <?php } ?>
+        </select>
+    </div>
+</div> -->

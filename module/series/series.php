@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Cin3-iL - Acteurs</title>
+        <title>Cin3-iL - Séries</title>
         <!-- Meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -23,21 +23,21 @@
         <script>
             function deleteItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=res.actor&action=delete&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=serie&action=delete&id=" + str, true);
                 xmlhttp.send();
             }
 
             function updateItem(str) {
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "../../model.php?model=res.actor&action=update&id=" + str, true);
+                xmlhttp.open("GET", "../../model.php?model=serie&action=update&id=" + str, true);
                 xmlhttp.send();
             }
         </script>
 
         <section>
-            <a href="/module/actor/create_actor.php" class="create_line_link">
+            <a href="/module/series/create_serie.php" class="create_line_link">
                 <div class="create_line">
-                    <h2>Ajouter un acteur</h2>
+                    <h2>Ajouter une série</h2>
                 </div>
             </a>
         </section>
@@ -45,7 +45,7 @@
         <section>
             <div class="list_items">
                 <?php
-                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `res.actor`");
+                    $query = $db->query("SELECT id, lastname, firstname, birthday_date, biography from `cinema`");
                     while ($actor = $query->fetch())
                     { ?>
                     <div class="item">

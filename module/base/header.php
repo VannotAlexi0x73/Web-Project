@@ -9,7 +9,7 @@
             <!-- <div>
                 <i class="fas fa-bars"></i>
             </div> -->
-            <div class="boutton_menu" onclick="window.location='/module/cinema/series.php';">Cinéma</div>
+            <div class="boutton_menu" onclick="window.location='/module/cinemas/cinemas.php';">Cinéma</div>
         </div>
         <div>
             <div class="boutton_menu" onclick="window.location='/module/series/series.php';">Séries</div>
@@ -18,10 +18,10 @@
             <div class="boutton_menu" onclick="window.location='/module/dvd/dvd.php';">DVD</div>
         </div>
         <div>
-            <div class="boutton_menu" onclick="window.location='/module/actor/actors.php';">Acteurs</div>
+            <div class="boutton_menu" onclick="window.location='/module/actors/actors.php';">Acteurs</div>
         </div>
         <div>
-            <div class="boutton_menu" onclick="window.location='/module/producer/producers.php';">Réalisateurs</div>
+            <div class="boutton_menu" onclick="window.location='/module/producers/producers.php';">Réalisateurs</div>
         </div>
         <div class="button_login">
             <div class="button_sign_in">
