@@ -52,7 +52,7 @@
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($producer['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($producer['image']) . '"  alt="' . $producer['lastname'] . '" title="' . $producer['lastname'] . '"/>'; ?>
                         </div>
                         <div class="item_description">
                             <div><span class="item_label">Nom :</span><?php echo $producer['lastname']; ?></div>

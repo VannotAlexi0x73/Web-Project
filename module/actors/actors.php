@@ -61,7 +61,7 @@
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($actor['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($actor['image']) . '"  alt="' . $actor['lastname'] . '" title="' . $actor['lastname'] . '"/>'; ?>
                         </div>
                         <div class="item_description">
                             <div><span class="item_label">Nom :</span><?php echo $actor['lastname']; ?></div>

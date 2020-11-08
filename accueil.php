@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <!-- Links -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
         <?php include "module/base/link.php"; ?>
 
     </head>
@@ -14,6 +15,8 @@
     <body>
         <!-- Include header -->
         <?php include "module/base/header.php"; ?>
+
+        <h1>Actuellement au cinéma</h1>
 
         <div class="carousel">
             <div class="images_carousel">

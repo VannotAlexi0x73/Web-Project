@@ -48,21 +48,21 @@
             <div class="list_items">
                 <?php
                     $query = $db->query("SELECT id, name, image, description, movie_time, release_date from `movie`");
-                    while ($dvd = $query->fetch())
+                    while ($movie = $query->fetch())
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($dvd['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($movie['image']) . '"  alt="' . $movie['name'] . '" title="' . $movie['name'] . '"/>'; ?>
                         </div>
                         <div class="item_description">
-                            <div><span class="item_label">Titre :</span><?php echo $dvd['name']; ?></div>
-                            <div><span class="item_label">Durée du film :</span><?php echo $dvd['movie_time']; ?></div>
-                            <div><span class="item_label">Date de sortie :</span><?php echo $dvd['release_date']; ?></div>
-                            <div><span class="item_label">Description :</span><?php echo $dvd['description']; ?></div>
+                            <div><span class="item_label">Titre :</span><?php echo $movie['name']; ?></div>
+                            <div><span class="item_label">Durée du film :</span><?php echo $movie['movie_time']; ?></div>
+                            <div><span class="item_label">Date de sortie :</span><?php echo $movie['release_date']; ?></div>
+                            <div><span class="item_label">Description :</span><?php echo $movie['description']; ?></div>
                             <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a id="update" onclick="updateItem(<?php echo $dvd['id']; ?>)">Modifier</a>
-                                <a id="delete" onclick="deleteItem(<?php echo $dvd['id']; ?>)">Supprimer</a>
+                                <a id="update" onclick="updateItem(<?php echo $movie['id']; ?>)">Modifier</a>
+                                <a id="delete" onclick="deleteItem(<?php echo $movie['id']; ?>)">Supprimer</a>
                             </div>
                             <?php endif; ?>
                         </div>

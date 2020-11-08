@@ -82,7 +82,7 @@
             if (isset($_POST['create_dvd']))
             {
                 extract($_POST);
-                if ($name && $$_FILES["image"] && $description && $release_date && $movie_time)
+                if ($name && $_FILES["image"] && $description && $release_date && $movie_time)
                 {
                     $query = $db->prepare("INSERT INTO `movie`(name, image, description, release_date, movie_time) VALUES (:name, :image, :description, :release_date, :movie_time)");
                     $query->execute([

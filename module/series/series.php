@@ -52,7 +52,7 @@
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($serie['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($serie['image']) . '"  alt="' . $serie['name'] . '" title="' . $serie['name'] . '"/>'; ?>
                         </div>
                         <div class="item_description">
                             <div><span class="item_label">Titre :</span><?php echo $serie['name']; ?></div>

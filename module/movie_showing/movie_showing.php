@@ -52,15 +52,15 @@
                     { ?>
                     <div class="item">
                         <div class="item_image">
-                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($movieShowing['image']) . '" height="" width="" alt="mon image" title="image"/>';?>
+                            <?php echo '<img src="data:image/jpg;base64,' . base64_encode($movieShowing['image']) . '"  alt="' . $movieShowing['name'] . '" title="' . $movieShowing['name'] . '"/>'; ?>
                         </div>
                         <div class="item_description">
                             <div><span class="item_label">Nom :</span><?php echo $movieShowing['name']; ?></div>
                             <div><span class="item_label">Description :</span><?php echo $movieShowing['description']; ?></div>
                             <?php if (isset($_SESSION['auth'])): ?>
                             <div class="item_buttons">
-                                <a onclick="updateItem(<?php echo $movieShowing['id']; ?>)">Modifier</a>
-                                <a onclick="deleteItem(<?php echo $movieShowing['id']; ?>)">Supprimer</a>
+                                <a id="update" onclick="updateItem(<?php echo $movieShowing['id']; ?>)">Modifier</a>
+                                <a id="delete" onclick="deleteItem(<?php echo $movieShowing['id']; ?>)">Supprimer</a>
                             </div>
                             <?php endif; ?>
                         </div>
