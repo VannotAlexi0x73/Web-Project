@@ -21,7 +21,7 @@
         ?>
 
         <section>
-            <form method="post" class="form_create">
+            <form method="post" class="form_create" enctype="multipart/form-data">
                 <h1><u>Réalisateur</u></h1>
                 <table>
                     <tr>
@@ -82,13 +82,13 @@
             if (isset($_POST['create_producer']))
             {
                 extract($_POST);
-                if ($lastname && $firstname && $image && $birthday_date && $biography)
+                if ($lastname && $firstname && $_FILES["image"] && $birthday_date && $biography)
                 {
                     $query = $db->prepare("INSERT INTO `res.producer`(lastname, firstname, image, birthday_date, biography) VALUES (:lastname, :firstname, :image, :birthday_date, :biography)");
                     $query->execute([
                         'lastname' => $lastname,
                         'firstname' => $firstname,
-                        'image' => $image,
+                        'image' => file_get_contents($_FILES["image"]["tmp_name"]),
                         'birthday_date' => $birthday_date,
                         'biography' => $biography,
                     ]);

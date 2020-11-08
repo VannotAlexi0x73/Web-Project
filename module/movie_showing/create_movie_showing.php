@@ -21,7 +21,7 @@
         ?>
 
         <section>
-            <form method="post" class="form_create">
+            <form method="post" class="form_create" enctype="multipart/form-data">
                 <h1><u>Film à l'affiche</u></h1>
                 <table>
                     <tr>
@@ -64,12 +64,12 @@
             if (isset($_POST['create_movie_showing']))
             {
                 extract($_POST);
-                if ($name && $image && $description)
+                if ($name && $_FILES["image"] && $description)
                 {
                     $query = $db->prepare("INSERT INTO `movie.showing`(name, image, description) VALUES (:name, :image, :description)");
                     $query->execute([
                         'name' => $name,
-                        'image' => $image,
+                        'image' => file_get_contents($_FILES["image"]["tmp_name"]),
                         'description' => $description,
                     ]);
                     unset($_POST);

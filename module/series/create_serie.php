@@ -21,7 +21,7 @@
         ?>
 
         <section>
-            <form method="post" class="form_create">
+            <form method="post" class="form_create" enctype="multipart/form-data">
                 <h1><u>Série</u></h1>
                 <table>
                     <tr>
@@ -82,12 +82,12 @@
             if (isset($_POST['create_serie']))
             {
                 extract($_POST);
-                if ($name && $image && $description && $season && $episode)
+                if ($name && $_FILES["image"] && $description && $season && $episode)
                 {
                     $query = $db->prepare("INSERT INTO `serie`(name, image, description, season, episode) VALUES (:name, :image, :description, :season,  :episode)");
                     $query->execute([
                         'name' => $name,
-                        'image' => $image,
+                        'image' => file_get_contents($_FILES["image"]["tmp_name"]),
                         'description' => $description,
                         'season' => $season,
                         'episode' => $episode,

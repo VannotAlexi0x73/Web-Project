@@ -21,7 +21,7 @@
         ?>
 
         <section>
-            <form method="post" class="form_create">
+            <form method="post" class="form_create" enctype="multipart/form-data">
                 <h1><u>Film</u></h1>
                 <table>
                     <tr>
@@ -82,12 +82,12 @@
             if (isset($_POST['create_dvd']))
             {
                 extract($_POST);
-                if (!empty($name) && !empty($description) && !empty($release_date) && !empty($movie_time) && !empty($image))
+                if ($name && $$_FILES["image"] && $description && $release_date && $movie_time)
                 {
                     $query = $db->prepare("INSERT INTO `movie`(name, image, description, release_date, movie_time) VALUES (:name, :image, :description, :release_date, :movie_time)");
                     $query->execute([
                         'name' => $name,
-                        'image' => $image,
+                        'image' => file_get_contents($_FILES["image"]["tmp_name"]),
                         'description' => $description,
                         'release_date' => $release_date,
                         'movie_time' => $movie_time,
