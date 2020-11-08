@@ -3,7 +3,7 @@
     define('HOST', 'localhost');
     define('DB', '3il_cine');
     define('USER', 'root');
-    define('PASS', 'root');
+    define('PASS', '');
 
     try {
         $db = new PDO('mysql:host=' . HOST . ';dbname=' . DB, USER, PASS);

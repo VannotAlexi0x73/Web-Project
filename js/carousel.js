@@ -15,7 +15,7 @@ const next_Button = document.querySelector('#next_Button');
 //Buttons listeners
 next_Button.addEventListener('click',()=>{
     if (counter >= carouselImages.length - 1) return;
-    carousel.style.transition = "transform 0.4s ease-in-out";
+    carousel.style.transition = "transform 0.5s ease-in-out";
     counter++;
     // console.log(counter);
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -23,12 +23,10 @@ next_Button.addEventListener('click',()=>{
 
 prev_Button.addEventListener('click',()=>{
     if (counter <= 0) return;
-    carousel.style.transition = "transform 0.4s ease-in-out";
+    carousel.style.transition = "transform 0.5s ease-in-out";
     counter--;
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
-
-
 carousel.addEventListener('transitionend', () => {
     if (carouselImages[counter].id === 'lastClone') {
         carousel.style.transition = "none";
@@ -40,6 +38,10 @@ carousel.addEventListener('transitionend', () => {
         counter = carouselImages.length - counter;
         carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-
-
 });
+
+setInterval(function(){
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    counter++;
+    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
+},5000);
