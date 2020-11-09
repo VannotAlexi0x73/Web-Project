@@ -23,7 +23,7 @@
 
         <!-- script -->
         
-        <h1>Actuellement au cinéma</h1>
+        <h1><u>Actuellement au cinéma</u></h1>
         
         <div class="carousel">
             <i class="fas fa-angle-right" id="next_Button"></i>

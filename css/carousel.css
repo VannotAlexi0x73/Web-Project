@@ -1,9 +1,9 @@
 .carousel {
     display: flex;
     margin: auto;
+    margin-bottom: 50px;
     overflow: hidden;
     width: 900px;
-    /* border: 5px solid green; */
     position: relative;
 }
 
@@ -19,7 +19,11 @@
     font-size: 40px;
     cursor: pointer;
     left: 10px;
-    color: lightgray;
+    color: #b0b0b0;
+}
+
+#prev_Button:hover {
+    color: #ededed;
 }
 
 #next_Button {
@@ -29,5 +33,9 @@
     font-size: 40px;
     cursor: pointer;
     right: 10px;
-    color: lightgray;
+    color: #b0b0b0;
+}
+
+#next_Button:hover {
+    color: #ededed;
 }
