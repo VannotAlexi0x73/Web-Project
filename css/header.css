@@ -67,15 +67,14 @@ nav a {
 .button_sign_in > a {
     cursor: pointer;
     background-color: #f5f0e1;
-    /* border: 1px solid black; */
     border-radius: 5px;
     padding: 5px;
+    margin-right: 1em;
 }
 
 .button_sign_up {
     cursor: pointer;
     background-color: #f5f0e1;
-    /* border: 0px solid black; */
     border-radius: 5px;
     padding: 5px;
 }
@@ -94,6 +93,10 @@ nav a {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
+}
+
+#logo:hover {
+    transform: rotateX(40);
 }
 
 
