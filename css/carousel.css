@@ -2,7 +2,7 @@
     display: flex;
     margin: auto;
     overflow: hidden;
-    width: 500px;
+    width: 900px;
     /* border: 5px solid green; */
     position: relative;
 }
@@ -10,7 +10,6 @@
 .images_carousel {
     display: flex;
     width: 100%;
-    height: 500px;
 }
 
 #prev_Button {

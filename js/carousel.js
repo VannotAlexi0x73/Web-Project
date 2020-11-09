@@ -2,51 +2,50 @@ const carousel = document.querySelector('.images_carousel');
 const carouselImages = document.querySelectorAll('.images_carousel img');
 
 //Compteur
-let counter = 1;
+let counter = 0;
 const size = carouselImages[0].clientWidth;
-const taille = carouselImages.length - 1 + "";
-
-carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
+const taille = carouselImages.length - 1;
 
 //Buttons
 const prev_Button = document.querySelector('#prev_Button');
 const next_Button = document.querySelector('#next_Button');
 
+// Timer
+function carousel_timer() {
+    counter++;
+    if (counter === carouselImages.length) {
+        counter = 0;
+    }
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
+}
+
+var timer = setInterval(carousel_timer, 5000);
+
 //Buttons listeners
-next_Button.addEventListener('click',()=>{
-    if (counter >= carouselImages.length - 1) return;
-    carousel.style.transition = "transform 0.5s ease-in-out";
-    counter++;
-    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-prev_Button.addEventListener('click',()=>{
-    if (counter <= 0) return;
-    carousel.style.transition = "transform 0.5s ease-in-out";
-    counter--;
-    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-carousel.addEventListener('transitionend', () => {
-    if (carouselImages[counter].id === taille) {
-        carousel.style.transition = "none";
+prev_Button.addEventListener('click', () => {
+    clearInterval(timer);
+    timer = setInterval(carousel_timer, 5000);
+    if (counter === 0) {
         counter = carouselImages.length - 1;
-        carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-    if (carouselImages[counter].id === '1') {
-        carousel.style.transition = "none";
-        counter = carouselImages.length - counter;
-        carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    else {
+        counter--;
     }
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 
-setInterval(function(){
-    carouselImages[counter].checked = true;
-    carousel.style.transition = "transform 0.5s ease-in-out";
-    counter++;
-    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    if (counter > carouselImages.length - 1) {
-        counter = 1;
+next_Button.addEventListener('click', () => {
+    clearInterval(timer);
+    timer = setInterval(carousel_timer, 5000);
+    if (counter === carouselImages.length - 1) {
+        counter = 0;
     }
-},5000);
+    else {
+        counter++;
+    }
+    carousel.style.transition = "transform 0.5s ease-in-out";
+    carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
 
