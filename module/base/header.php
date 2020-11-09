@@ -35,7 +35,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <a onclick="window.location='/module/login/sign_in.php';">Se connecter</a>
                 </div>
                 <div>
-                    <a class="button_sign_up" onclick="window.location='/module/login/sign_up.php';">Créer un compte</a>
+                    <a class="button_sign_up" onclick="window.location='/module/login/sign_up.php';">S'inscrire</a>
                 </div>
             <?php else: ?>
                 <div>

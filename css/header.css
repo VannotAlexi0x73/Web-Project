@@ -3,8 +3,8 @@ header {
 }
 
 header img {
-    width: 100px; 
-    height: 100px; 
+    width: 80px; 
+    height: 80px; 
 }
 
 nav {
@@ -21,9 +21,6 @@ nav a {
     color: black;
 }
 
-nav a:hover {
-    font-weight: bolder;
-}
 
 .boutton_menu {
     border-left: 3px solid #f5f0e1;
@@ -69,24 +66,31 @@ nav a:hover {
 
 .button_sign_in > a {
     cursor: pointer;
-    background-color: lightcoral;
-    border: 1px solid black;
+    background-color: #f5f0e1;
+    /* border: 1px solid black; */
     border-radius: 5px;
     padding: 5px;
 }
 
 .button_sign_up {
     cursor: pointer;
-    background-color: lightpink;
-    border: 1px solid black;
+    background-color: #f5f0e1;
+    /* border: 0px solid black; */
     border-radius: 5px;
     padding: 5px;
 }
 
+.button_sign_up:hover {
+    background-color: #c8c2af
+}
+
+.button_sign_in > a:hover {
+    background-color: #c8c2af
+}
 /* Boutton de deconnexion */
 .button_logout {
     cursor: pointer;
-    background-color: lightpink;
+    background-color: #f5f0e1;
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
