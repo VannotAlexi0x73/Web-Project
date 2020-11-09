@@ -30,7 +30,7 @@
             <i class="fas fa-angle-left" id="prev_Button"></i>
             <div class="images_carousel">
                 <?php $query = $db->query("SELECT name, image from `movie.showing`");
-                        $index = 0;
+                        $index = 1;
                     while ($movieShowing = $query->fetch()) {
                         echo '<img src="data:image/jpg;base64,' . base64_encode($movieShowing['image']) . '"  alt="' . $movieShowing['name'] . '" title="' . $movieShowing['name'] . '" id="' . $index . '"/>';
                         $index++;

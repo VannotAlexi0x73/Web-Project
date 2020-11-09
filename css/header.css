@@ -95,11 +95,6 @@ nav a {
     padding: 5px;
 }
 
-#logo:hover {
-    transform: rotateX(40);
-}
-
-
 /* Responsive */
 @media (max-width: 550px) {
     nav {

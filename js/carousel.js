@@ -4,6 +4,7 @@ const carouselImages = document.querySelectorAll('.images_carousel img');
 //Compteur
 let counter = 1;
 const size = carouselImages[0].clientWidth;
+const taille = carouselImages.length - 1 + "";
 
 carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
@@ -27,12 +28,12 @@ prev_Button.addEventListener('click',()=>{
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 carousel.addEventListener('transitionend', () => {
-    if (carouselImages[counter].id === 'lastClone') {
+    if (carouselImages[counter].id === taille) {
         carousel.style.transition = "none";
-        counter = carouselImages.length - 2;
+        counter = carouselImages.length - 1;
         carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-    if (carouselImages[counter].id === 'firstClone') {
+    if (carouselImages[counter].id === '1') {
         carousel.style.transition = "none";
         counter = carouselImages.length - counter;
         carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -40,7 +41,12 @@ carousel.addEventListener('transitionend', () => {
 });
 
 setInterval(function(){
+    carouselImages[counter].checked = true;
     carousel.style.transition = "transform 0.5s ease-in-out";
     counter++;
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    if (counter > carouselImages.length - 1) {
+        counter = 1;
+    }
 },5000);
+
