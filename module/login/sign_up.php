@@ -69,6 +69,7 @@
                         'password' => $password,
                     ]);
                     unset($_POST);
+                    header("Location: ../../accueil.php");
                 }
             }
         ?>

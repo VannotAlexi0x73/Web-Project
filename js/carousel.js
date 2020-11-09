@@ -17,7 +17,6 @@ next_Button.addEventListener('click',()=>{
     if (counter >= carouselImages.length - 1) return;
     carousel.style.transition = "transform 0.5s ease-in-out";
     counter++;
-    // console.log(counter);
     carousel.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 

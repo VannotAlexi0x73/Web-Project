@@ -36,14 +36,22 @@
 }
 
 .item_image {
+    display: flex;
+    align-items: center;
+}
+
+.item_image > img {
+    padding: 2px;
+    max-width: 200px;
     border: 1px solid black;
-    padding: 10px;
 }
 
 .item_description {
     display: flex;
     flex-direction: column;
+    margin: 10px;
     padding: 10px;
+    border-left: 2px solid black;
 }
 
 .item_buttons {
